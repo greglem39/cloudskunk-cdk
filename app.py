@@ -2,14 +2,13 @@
 # import os
 
 import aws_cdk as cdk
-from rosecourt_pipeline.rosecourt_pipeline import RosecourtPipeline
+from rose_network.vpc import CourtOfRosesNetwork
 
 
 app = cdk.App()
-RosecourtPipeline(
-    app,
-    "RosecourtPipelineStack",
-    env=cdk.Environment(account="058264153331", region="us-east-1"),
-)
+
+env_primary = cdk.Environment(account="058264153331", region="us-east-1")
+
+CourtOfRosesNetwork(app, "CourtOfRosesNetwork", env=env_primary)
 
 app.synth()
