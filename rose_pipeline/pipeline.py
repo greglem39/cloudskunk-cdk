@@ -1,7 +1,7 @@
 from constructs import Construct
 
 from aws_cdk import Stack, pipelines
-from network_stage import RoseNetworkStage
+from rose_pipeline.network_stage import RoseNetworkStage
 
 
 class RosePipeline(Stack):
@@ -22,6 +22,6 @@ class RosePipeline(Stack):
 
         pipeline = pipelines.CodePipeline(self, "RosePipeline", synth=synth)
 
-        deploy_network = RoseNetworkStage(self, "deploy_network")
+        deploy_network = RoseNetworkStage(self, "deploy-network")
 
         pipeline.add_stage(deploy_network)
