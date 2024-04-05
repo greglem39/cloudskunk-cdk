@@ -12,7 +12,7 @@ class CourtOfRosesNetwork(Stack):
             vpc_name="rose_court",
             ip_addresses=ec2.IpAddresses.cidr("10.16.0.0/16"),
             default_instance_tenancy=ec2.DefaultInstanceTenancy.DEFAULT,
-            max_azs=3,
+            max_azs=3,  # triggering execution
             enable_dns_hostnames=True,
             enable_dns_support=True,
             subnet_configuration=[
