@@ -37,5 +37,5 @@ class CourtOfRosesNetwork(Stack):
                     cidr_mask=20,
                 ),
             ],
-            nat_gateways=0,  # specify for the number of AZs if you want max availability
+            nat_gateways=0,  # specify for the number of AZs for max  avail
         )
