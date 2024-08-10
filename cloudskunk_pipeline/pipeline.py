@@ -4,7 +4,7 @@ from aws_cdk import Stack, pipelines
 from cloudskunk_pipeline.network_stage import CloudSkunkNetworkStage
 
 
-class SkunkPipeline(Stack):
+class SkunkPipeline(Stack):  # triggering self mutation ...
     def __init__(self, scope: Construct, construct_id: str, **kwargs) -> None:
         super().__init__(scope, construct_id, **kwargs)
 
