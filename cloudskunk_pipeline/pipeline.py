@@ -1,14 +1,14 @@
 from constructs import Construct
 
 from aws_cdk import Stack, pipelines
-from rose_pipeline.network_stage import RoseNetworkStage
+from cloudskunk_pipeline.network_stage import CloudSkunkNetworkStage
 
 
-class RosePipeline(Stack):
+class SkunkPipeline(Stack):
     def __init__(self, scope: Construct, construct_id: str, **kwargs) -> None:
         super().__init__(scope, construct_id, **kwargs)
 
-        repo = pipelines.CodePipelineSource.git_hub("greglem39/rosecourt-cdk", "main")
+        repo = pipelines.CodePipelineSource.git_hub("greglem39/cloudskunk-cdk", "main")
 
         synth = pipelines.ShellStep(
             "Synth",
@@ -20,8 +20,8 @@ class RosePipeline(Stack):
             ],
         )
 
-        pipeline = pipelines.CodePipeline(self, "RosePipeline", synth=synth)
+        pipeline = pipelines.CodePipeline(self, "CloudSkunkPipeline", synth=synth)
 
-        deploy_network = RoseNetworkStage(self, "deploy-network")
+        deploy_network = CloudSkunkNetworkStage(self, "deploy-network")
 
         pipeline.add_stage(deploy_network)

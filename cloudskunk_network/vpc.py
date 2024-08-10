@@ -2,14 +2,14 @@ from aws_cdk import Stack, aws_ec2 as ec2
 from constructs import Construct
 
 
-class CourtOfRosesNetwork(Stack):
+class CloudSkunkNetwork(Stack):
     def __init__(self, scope: Construct, construct_id: str, **kwargs) -> None:
         super().__init__(scope, construct_id, **kwargs)
 
         self.rose_vpc = ec2.Vpc(
             self,
-            "rose_court",
-            vpc_name="rose_court",
+            "cloudskunk_network",
+            vpc_name="cloudskunk_network",
             ip_addresses=ec2.IpAddresses.cidr("10.16.0.0/16"),
             default_instance_tenancy=ec2.DefaultInstanceTenancy.DEFAULT,
             max_azs=3,

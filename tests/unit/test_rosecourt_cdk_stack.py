@@ -1,14 +1,16 @@
 import aws_cdk as core
 import aws_cdk.assertions as assertions
 
-from rosecourt_cdk.rosecourt_cdk_stack import RosecourtCdkStack
+from cloudskunk_cdk.cloudskunk_cdk_stack import cloudskunkCdkStack
+
 
 # example tests. To run these tests, uncomment this file along with the example
-# resource in rosecourt_cdk/rosecourt_cdk_stack.py
+# resource in cloudskunk_cdk/cloudskunk_cdk_stack.py
 def test_sqs_queue_created():
     app = core.App()
-    stack = RosecourtCdkStack(app, "rosecourt-cdk")
+    stack = cloudskunkCdkStack(app, "cloudskunk-cdk")
     template = assertions.Template.from_stack(stack)
+
 
 #     template.has_resource_properties("AWS::SQS::Queue", {
 #         "VisibilityTimeout": 300

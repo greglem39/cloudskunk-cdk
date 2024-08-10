@@ -1,11 +1,11 @@
 from constructs import Construct
 from aws_cdk import Stage
 
-from rose_network.vpc import CourtOfRosesNetwork
+from cloudskunk_network.vpc import CloudSkunkNetwork
 
 
-class RoseNetworkStage(Stage):
+class CloudSkunkNetworkStage(Stage):
     def __init__(self, scope: Construct, construct_id: str, **kwargs) -> None:
         super().__init__(scope, construct_id, **kwargs)
 
-        network = CourtOfRosesNetwork(self, "CourtOfRosesNetwork")
+        network = CloudSkunkNetwork(self, "CloudSkunkNetwork")
