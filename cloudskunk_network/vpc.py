@@ -17,22 +17,22 @@ class CloudSkunkNetwork(Stack):
             enable_dns_support=True,
             subnet_configuration=[
                 ec2.SubnetConfiguration(
-                    name="sn-db",
-                    subnet_type=ec2.SubnetType.PRIVATE_ISOLATED,
-                    cidr_mask=20,
-                ),
-                ec2.SubnetConfiguration(
-                    name="sn-app",
-                    subnet_type=ec2.SubnetType.PRIVATE_ISOLATED,
-                    cidr_mask=20,
-                ),
-                ec2.SubnetConfiguration(
-                    name="sn-web",
+                    name="cloudskunk-pub1",
                     subnet_type=ec2.SubnetType.PUBLIC,
                     cidr_mask=20,
                 ),
                 ec2.SubnetConfiguration(
-                    name="reserved-sn",
+                    name="cloudskunk-pub2",
+                    subnet_type=ec2.SubnetType.PUBLIC,
+                    cidr_mask=20,
+                ),
+                ec2.SubnetConfiguration(
+                    name="cloudskunk-privegress",
+                    subnet_type=ec2.SubnetType.PRIVATE_WITH_EGRESS,
+                    cidr_mask=20,
+                ),
+                ec2.SubnetConfiguration(
+                    name="cloudskunk-priviso",
                     subnet_type=ec2.SubnetType.PRIVATE_ISOLATED,
                     cidr_mask=20,
                 ),
